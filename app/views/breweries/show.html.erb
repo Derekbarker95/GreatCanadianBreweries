@@ -1,0 +1,40 @@
+<h1><%= @brewery.name %></h1>
+  <h5><%= @brewery.description %></h5>
+  <div style='width: 800px;'>
+    <div id="brewery_map" style='width: 800px; height: 400px;'></div>
+  </div>
+
+
+
+  <h2> Beers </h2>
+
+  <% @brewery.beers.each do |beer| %>
+    <%= render partial: "/beers/beer", locals: {beer: beer} %>
+  <% end %>
+
+
+  <script>
+
+   var mapStyle = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+
+    handler = Gmaps.build('Google');
+    handler.buildMap({ 
+      provider: {
+          zoom:      15,
+          center:    new google.maps.LatLng(<%= @brewery.latitude%>, <%= @brewery.longitude%>),
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles:    mapStyle
+      }, 
+      internal: {id: 'brewery_map'}}, function(){
+        markers = handler.addMarkers([
+        {
+          "lat": <%= @brewery.latitude %>,
+          "lng": <%= @brewery.longitude %>,
+          "infowindow": "<%= @brewery.name %>"
+        }
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+
+  </script>

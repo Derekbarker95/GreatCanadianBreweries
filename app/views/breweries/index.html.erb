@@ -1,0 +1,9 @@
+<% @brewery.each do |b| %>
+
+<%= link_to b.name, b %>
+<%= b.description %>
+<%= b.address %>
+<%= b.phone %>
+<br>
+
+<% end %>
