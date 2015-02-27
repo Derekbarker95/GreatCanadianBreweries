@@ -1,0 +1,39 @@
+<h1>Nearby Campaigns</h1>
+
+
+<div id="map" style="height: 500px"></div>
+
+<% @brewery.each do |b| %>
+
+<%= link_to b.name, b %>
+<%= b.description %>
+<%= b.address %>
+<%= b.phone %>
+<br>
+
+<% end %>
+
+
+<script>
+
+var mapStyle = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#D6D3C3"}]},
+                  {"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#FFA836"},{"color":"#2AD194"}]},
+                  {"featureType":"road","elementType":"geometry","stylers":[{"lightness":50},{"visibility":"simplified"}]},
+                  {"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},
+                  {"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":600}]},
+                  {"featureType":"water","elementType":"all","stylers":[{"color":"#43BCCC"}]}]
+
+
+  $(document).ready(function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({ 
+      provider: {mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles:    mapStyle}, 
+      internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+  });
+</script>
+

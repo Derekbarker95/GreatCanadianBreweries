@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  root "main#home"
+
   resources :breweries do
     resources :beers
   end
+
+   get '/search' => 'nearbybreweries#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
