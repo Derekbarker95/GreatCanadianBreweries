@@ -4,3 +4,13 @@
 <%= beer.ibu %>
 <%= beer.abv %>
 <%= beer.color %>
+
+<div class="showreview">
+<% beer.review.each do |review| %>
+  <%= render partial: "/reviews/review", locals: {beer: beer, review: review} %>
+<%end%>
+</div>
+
+<div class="reviewform">
+ <%= render partial: "/reviews/form", locals: {beer: beer, review: @review} %>
+</div>

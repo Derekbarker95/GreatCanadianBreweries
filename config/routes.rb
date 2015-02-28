@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root "main#home"
 
   resources :breweries do
-    resources :beers do
-      resources :beer_reviews
-    end
+    resources :beers 
   end
+
+  resources :beers do
+      resources :reviews
+    end
 
   get '/search' => 'nearbybreweries#index'
 
