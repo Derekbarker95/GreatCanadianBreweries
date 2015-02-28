@@ -21,6 +21,11 @@ class BreweriesController < ApplicationController
   @brewery = Brewery.order(:id)
  end
 
+ def destroy
+    @brewery.destroy
+    redirect_to breweries_path
+ end
+
  private 
 
   def full_address

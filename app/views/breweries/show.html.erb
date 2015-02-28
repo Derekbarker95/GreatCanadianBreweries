@@ -1,5 +1,6 @@
 <h1><%= @brewery.name %></h1>
   <h5><%= @brewery.description %></h5>
+  <%= link_to "Delete", brewery_path, method: :delete, data: {confirm:"Are you sure?"}%>
   <div style='width: 800px;'>
     <div id="brewery_map" style='width: 800px; height: 400px;'></div>
   </div>
@@ -7,6 +8,7 @@
 
 
   <h2> Beers </h2>
+
 
   <% @brewery.beers.each do |beer| %>
     <%= render partial: "/beers/beer", locals: {beer: beer} %>

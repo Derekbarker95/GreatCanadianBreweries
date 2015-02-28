@@ -1,5 +1,11 @@
 <h1>Nearby Campaigns</h1>
-
+  
+  
+  <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag :search, @search %>
+  <%= submit_tag("Search") %>
+  <% end %>
 
 <div id="map" style="height: 500px"></div>
 
@@ -30,7 +36,7 @@ var mapStyle = [{"featureType":"landscape.natural","elementType":"geometry.fill"
       provider: {mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles:    mapStyle}, 
       internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      markers = handler.addMarkers(<%= raw @hash.to_json %> );
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
     });

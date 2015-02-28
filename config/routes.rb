@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   root "main#home"
 
   resources :breweries do
-    resources :beers
+    resources :beers do
+      resources :beer_reviews
+    end
   end
 
-   get '/search' => 'nearbybreweries#index'
+  get '/search' => 'nearbybreweries#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
