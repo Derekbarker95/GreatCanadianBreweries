@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228210211) do
+ActiveRecord::Schema.define(version: 20150302005219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20150228210211) do
     t.string   "province"
     t.string   "city"
     t.string   "country",     default: "Canada"
+    t.boolean  "growler",     default: false
+    t.boolean  "tour",        default: false
+    t.boolean  "tasteing",    default: false
+    t.boolean  "keg",         default: false
   end
 
   create_table "nearbybreweries", force: :cascade do |t|
