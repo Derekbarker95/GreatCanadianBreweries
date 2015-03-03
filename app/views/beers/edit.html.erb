@@ -1,2 +1,6 @@
 
 <h2>Edit Beer</h2>
+
+<%= link_to "Delete", brewery_beer_path, method: :delete, data: {confirm:"Are you sure?"}%>
+
+<%= render "form" %>
