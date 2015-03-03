@@ -1,5 +1,6 @@
 class BreweriesController < ApplicationController
   before_action :find_brewery, only: [:show, :edit, :update, :destroy]
+  before_action :admin, only: [:new, :create, :edit, :update, :destroy]
 
  def new 
   @brewery = Brewery.new

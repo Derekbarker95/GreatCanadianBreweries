@@ -1,7 +1,8 @@
 class BeersController < ApplicationController
 
-  before_action :find_beer, only: [:destroy]
-  before_action :find_brewery, only: [:destroy, :create, :new]
+  before_action :find_beer, only: [:destroy, :update]
+  before_action :find_brewery, only: [:destroy, :create, :new, :update]
+  before_action :admin, only: [:new, :create, :edit, :update, :destroy]
  
  def new
   @beer = Beer.new
@@ -15,6 +16,24 @@ class BeersController < ApplicationController
     redirect_to @brewery
  end 
 
+ def destroy
+    @beer.destroy
+    redirect_to breweries_path
+ end
+
+ def edit
+  end
+
+
+  def update
+
+    if @beer.update beer_params
+      redirect_to @brewery
+    else
+      render :edit
+    end
+  end
+
  private 
 
   def find_brewery
@@ -26,7 +45,7 @@ class BeersController < ApplicationController
   end
 
   def beer_params
-    brewery_params = params.require(:beer).permit(:name, :description, :style, :ibu, :abv, :color ) 
+    beer_params = params.require(:beer).permit(:name, :description, :style, :ibu, :abv, :color ) 
   end
 
 

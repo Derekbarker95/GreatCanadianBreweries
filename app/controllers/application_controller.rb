@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def admin
+    redirect_to '/login' unless current_user.admin == true 
+  end
+
 
 
 end
