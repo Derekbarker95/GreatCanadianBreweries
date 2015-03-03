@@ -37,12 +37,12 @@ textarea {
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin-bottom: $base-spacing / 2;
-  padding: $base-spacing / 3;
+  padding: $base-spacing / 3.5;
   transition: border-color;
   width: 100%;
 
   &:hover {
-    border-color: darken($base-border-color, 10%);
+    border-color: darken($base-border-color, 15%);
   }
 
   &:focus {
@@ -74,5 +74,4 @@ input[type="file"] {
 select {
   margin-bottom: $base-spacing;
   max-width: 100%;
-  width: auto;
 }

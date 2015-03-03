@@ -1,11 +1,10 @@
 <h1></h1>
   
-  
+  <div class="search">
   <%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag :search, @search %>
-  <%= submit_tag("Search") %>
+  <span><%= text_field_tag :search, @search, class: "search-form" %></span>
   <% end %>
+  </div>
 
 <div id="map" style="height: 350px "></div>
 
