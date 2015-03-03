@@ -26,6 +26,19 @@ class BreweriesController < ApplicationController
     redirect_to breweries_path
  end
 
+ def edit
+  end
+
+
+  def update
+
+    if @brewery.update brewery_params
+      redirect_to @brewery, notice: "Question Updated"
+    else
+      render :edit
+    end
+  end
+
  private 
 
   def full_address
@@ -37,7 +50,7 @@ class BreweriesController < ApplicationController
   end
 
   def brewery_params
-    brewery_params = params.require(:brewery).permit(:name, :description, :address, :province, :city, :phone, :growler, :tour, :tasteing, :keg ) 
+    brewery_params = params.require(:brewery).permit(:name, :description, :address, :province, :city, :phone, :growler, :tour, :tasteing, :keg, :website, :instagram, :twitter, :facebook ) 
   end
 
 

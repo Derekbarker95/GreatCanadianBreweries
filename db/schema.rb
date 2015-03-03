@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302005219) do
+ActiveRecord::Schema.define(version: 20150303000437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 20150302005219) do
     t.boolean  "tour",        default: false
     t.boolean  "tasteing",    default: false
     t.boolean  "keg",         default: false
+    t.string   "twitter"
+    t.string   "instagram"
+    t.string   "facebook"
+    t.string   "website"
+    t.string   "logo"
   end
 
   create_table "nearbybreweries", force: :cascade do |t|

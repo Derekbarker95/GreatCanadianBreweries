@@ -1,4 +1,4 @@
-<h1>Nearby Campaigns</h1>
+<h1></h1>
   
   
   <%= form_tag("/search", method: "get") do %>
@@ -7,17 +7,51 @@
   <%= submit_tag("Search") %>
   <% end %>
 
-<div id="map" style="height: 500px"></div>
+<div id="map" style="height: 350px "></div>
 
+<div class="cards">
 <% @brewery.each do |b| %>
-
-<%= link_to b.name, b %>
-<%= b.description %>
-<%= b.address %>
-<%= b.phone %>
-<br>
-
+  <div class="card">
+    <div class="card-header">
+      <%= link_to b.name, b %>
+    </div>
+    <div class="card-copy">
+      <p><%= b.description %></p>
+      <p><%= b.phone %></p>
+      <a href="<%= b.website %>"><%= b.website %></a>
+    </div>
+    <div class="card-stats">
+      <ul>
+        <li>Growler <% if b.growler == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tour <% if b.tour == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tasteing <% if b.tasteing == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                      <% end %>
+                    </li>
+        <li>Keg <% if b.keg == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+      </ul>
+    </div>
+  </div>
 <% end %>
+</div>
+
 
 
 <script>
