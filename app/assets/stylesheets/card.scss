@@ -1,7 +1,5 @@
 .cards {
-  @include display(flex);
-  @include flex-wrap(wrap);
-  @include justify-content(space-between);
+  
 }
 
 .card {
@@ -25,9 +23,7 @@
   $card-image-hover-background: lighten($card-image-background, 5%);
   $card-margin: 1.5em;
 
-  @include flex-basis(15em);
-  @include flex-grow(1);
-  @include transition (all 0.2s ease-in-out);
+  
   background-color: $card-background;
   border-radius: $base-border-radius;
   border: $card-border;
@@ -42,7 +38,7 @@
     max-height: 50px;
 
     img {
-      @include transition (all 0.2s ease-in-out);
+      
       background: $card-image-background;
       border-top-left-radius: $base-border-radius;
       border-top-right-radius: $base-border-radius;
@@ -51,7 +47,7 @@
   }
 
   .card-header {
-    @include transition (all 0.2s ease-in-out);
+    
     background-color: $card-header-background;
     border-bottom: $card-border;
     border-radius: $base-border-radius $base-border-radius 0 0;

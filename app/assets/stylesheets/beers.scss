@@ -1,3 +1,41 @@
 // Place all the styles related to the beers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.beerinfo {
+
+  height: 90px;
+  border: 1px solid #b3b3b3;
+  border-radius: 15px;
+  margin-bottom: 10px;
+
+  .beerhead{
+    h4{  
+      float: left;
+      font-size: 1.7em;
+      padding-left: 15px;
+      margin-top: 0px;
+    }
+    .fa-beer {
+      font-size: 1.6em;
+      float: left;
+      margin-top: 5px;
+    }
+  }
+
+  .beertypes{
+    p{ 
+      float: left;
+      padding-left: 5px;
+    }
+  }
+
+  .description {
+    margin-left: 20px;
+  }
+
+}
+
+

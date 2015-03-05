@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "main#home"
+  root 'nearbybreweries#index'
 
   resources :breweries do
     resources :beers 
@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :beers do
       resources :reviews
     end
+
+  get '/about' => 'main#about'
+  get '/contact' => 'main#contact'
+  get '/beerrun' => 'main#beerrun'
 
   get '/search' => 'nearbybreweries#index'
 

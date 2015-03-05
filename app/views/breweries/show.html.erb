@@ -1,20 +1,47 @@
-<h1><%= @brewery.name %></h1>
+
+<div class="brewery col-md 12">
+
+<h2><%= @brewery.name %></h2>
+<div class="social">
+  <a href="<%= @brewery.website %>"><%=fa_icon "wordpress"%></a>  
+  <a href="<%= @brewery.facebook %>"><%=fa_icon "facebook"%></a>
+  <a href="<%= @brewery.twitter %>"><%=fa_icon "twitter"%></a>
+  <a href="<%= @brewery.instagram %>"><%=fa_icon "instagram"%></a>
+  </div>
   <h5><%= @brewery.description %></h5>
-  <%= @brewery.phone %>
+  <p> <%=fa_icon "phone"%><%= @brewery.phone %></p>
   
 
-  <a href="<%= @brewery.website %>"><%= @brewery.name %></a>  
-  <a href="<%= @brewery.facebook %>">Facebook</a>
-  <a href="<%= @brewery.twitter %>">Twitter</a>
-  <a href="<%= @brewery.instagram %>">Instagram</a>
-
-
-  <p>Growlers: <%= @brewery.growler %><p>
-  <p>Tours: <%= @brewery.tour %><p>
-  <p>Tasteings: <%= @brewery.tasteing %><p>
-  <p>Kegs: <%= @brewery.keg %><p>
   
-  <div style='width: 800px;'>
+
+  <ul class="features">
+        <li>Growler <% if @brewery.growler == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tour <% if @brewery.tour == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tasteing <% if @brewery.tasteing == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                      <% end %>
+                    </li>
+        <li>Keg <% if @brewery.keg == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+      </ul>
+  
+  <div style='width: 400px;' class="bmap">
     <div id="brewery_map" style='width: 100%; height: 350px;'></div>
   </div>
 
@@ -26,7 +53,7 @@
   <% @brewery.beers.each do |beer| %>
     <%= render partial: "/beers/beer", locals: {beer: beer} %>
   <% end %>
-
+</div>
 
   <script>
 

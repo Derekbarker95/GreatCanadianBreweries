@@ -1,0 +1,35 @@
+ nav { 
+  font-size: 1.3em;
+
+  .container-fluid{
+    padding-left: 30px;
+  }
+
+  h1 {
+  display: none;
+  }
+
+  .logo{
+    width: 200px;
+    margin-bottom: 10px;
+  }
+
+
+
+  li {
+    text-decoration: none;
+  }
+
+ .navbar-right {
+  margin-left: 300px;
+ }
+
+ .navbar-text{
+  padding-bottom: 15px;
+ }
+
+ .navbar-nav{
+  margin-top: 20px;
+ }
+
+ }

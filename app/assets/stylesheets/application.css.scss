@@ -1,4 +1,6 @@
-/*
+
+
+  /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -11,15 +13,37 @@
  * file per style scope.
  *
  *= require_self
- *= require normalize-rails
+ *= require_tree .
  */
 
-  @import "bourbon";
-  @import "base/base";
-  @import "neat";
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
   @import "font-awesome";
-  @import "nav";
-  @import "nearbybreweries";
-  @import "card"; 
-  @import "breweries";
-  @import "beers";
+
+
+  .container{
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .fa {
+    padding-right: 5px;
+  }
+
+
+  body {
+    background-color: #F7F7F7;
+  }
+
+  a {
+    color: #878787;
+  }
+
+  a:hover {
+    color: #ff6d6d;
+  }
+
+
+
+
+  

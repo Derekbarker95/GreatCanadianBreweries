@@ -1,4 +1,4 @@
-<h1></h1>
+
   
   <div class="search">
   <%= form_tag("/search", method: "get") do %>
@@ -16,7 +16,7 @@
     </div>
     <div class="card-copy">
       <p><%= b.description %></p>
-      <p><%= b.phone %></p>
+      <p><%=fa_icon "phone"%> <%= b.phone %></p>
       <a href="<%= b.website %>"><%= b.website %></a>
     </div>
     <div class="card-stats">

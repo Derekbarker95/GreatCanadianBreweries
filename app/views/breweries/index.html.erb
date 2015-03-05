@@ -1,9 +1,42 @@
+<div class="cards">
 <% @brewery.each do |b| %>
-
-<%= link_to b.name, b %>
-<%= b.description %>
-<%= b.address %>
-<%= b.phone %>
-<br>
-
+  <div class="card">
+    <div class="card-header">
+      <%= link_to b.name, b %>
+    </div>
+    <div class="card-copy">
+      <p><%= b.description %></p>
+      <p><%=fa_icon "phone"%> <%= b.phone %></p>
+      <a href="<%= b.website %>"><%= b.website %></a>
+    </div>
+    <div class="card-stats">
+      <ul>
+        <li>Growler <% if b.growler == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tour <% if b.tour == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+        <li>Tasteing <% if b.tasteing == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                      <% end %>
+                    </li>
+        <li>Keg <% if b.keg == true %>
+                      <%=fa_icon "check"%>
+                    <% else %>
+                      <%=fa_icon "times"%>
+                    <% end %>
+                    </li>
+      </ul>
+    </div>
+  </div>
 <% end %>
+</div>
