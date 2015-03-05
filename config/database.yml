@@ -82,4 +82,4 @@ production:
   <<: *default
   database: greatcanadianbreweries_production
   username: greatcanadianbreweries
-  password: macbook11
+  password: "macbook11"
