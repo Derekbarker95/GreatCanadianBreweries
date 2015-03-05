@@ -82,4 +82,4 @@ production:
   <<: *default
   database: greatcanadianbreweries_production
   username: greatcanadianbreweries
-  password: 'code6650d'
+  password: 'code6650d';
