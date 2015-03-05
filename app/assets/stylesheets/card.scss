@@ -19,9 +19,9 @@
   $card-background: lighten($card-border-color, 10%);
   $card-header-background: $card-background;
   $card-hover-background: lighten($card-background, 5%);
-  $card-image-background: #DBD199;
+  $card-image-background: lighten($card-border-color, 10%);
   $card-image-hover-background: lighten($card-image-background, 5%);
-  $card-margin: 1.5em;
+  $card-margin: 1em;
 
   
   background-color: $card-background;
@@ -35,14 +35,15 @@
 
   .card-image {
     overflow: hidden;
-    max-height: 50px;
+    height: 150px;
+    background: $card-image-background;
 
     img {
       
       background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
       width: 100%;
+      height: auto;
+
     }
   }
 

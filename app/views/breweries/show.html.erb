@@ -1,19 +1,21 @@
 
 <div class="brewery col-md 12">
 
+<div class="col-md-8">
+
+<div class="bhead col-md-12">
+
 <h2><%= @brewery.name %></h2>
 <div class="social">
   <a href="<%= @brewery.website %>"><%=fa_icon "wordpress"%></a>  
   <a href="<%= @brewery.facebook %>"><%=fa_icon "facebook"%></a>
   <a href="<%= @brewery.twitter %>"><%=fa_icon "twitter"%></a>
   <a href="<%= @brewery.instagram %>"><%=fa_icon "instagram"%></a>
-  </div>
+</div>
+</div>
   <h5><%= @brewery.description %></h5>
   <p> <%=fa_icon "phone"%><%= @brewery.phone %></p>
   
-
-  
-
   <ul class="features">
         <li>Growler <% if @brewery.growler == true %>
                       <%=fa_icon "check"%>
@@ -40,12 +42,14 @@
                     <% end %>
                     </li>
       </ul>
+    </div>
+
   
-  <div style='width: 400px;' class="bmap">
-    <div id="brewery_map" style='width: 100%; height: 350px;'></div>
+  <div style='width: 300px;' class="bmap col-md-4">
+    <div id="brewery_map" style='width: 100%; height: 270px;'></div>
   </div>
 
-
+<div class="col-md-12">
 
   <h2> Beers </h2>
 
@@ -54,7 +58,7 @@
     <%= render partial: "/beers/beer", locals: {beer: beer} %>
   <% end %>
 </div>
-
+</div>
   <script>
 
    var mapStyle = [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#D6D3C3"}]},

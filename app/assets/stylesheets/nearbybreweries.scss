@@ -14,15 +14,22 @@
 }
 
 .card{
-  width: 240px;
+  width: 200px;
   float: left;
-  margin: 15;
-  min-height: 220px; 
+  min-height: 220px;
 }
 
 .card-stats ul{
   list-style-type: none;
   padding: 0px;
+}
+
+.card-copy {
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  white-space: nowrap;
+  height: 60px;
+  width: 190px;
 }
 
 
