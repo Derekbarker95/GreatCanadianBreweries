@@ -24,6 +24,14 @@
   padding: 0px;
 }
 
+.card-copy {
+  text-overflow: ellipsis; 
+  overflow: hidden;
+  white-space: nowrap;
+  height: 60px;
+  width: 190px;
+}
+
 
 
 
