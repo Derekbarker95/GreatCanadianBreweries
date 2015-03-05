@@ -4,6 +4,9 @@
     <div class="card-header">
       <%= link_to b.name, b %>
     </div>
+    <div class="card-image">
+      <%= image_tag (b.logo) %>
+    </div>
     <div class="card-copy">
       <p><%= b.description %></p>
       <p><%=fa_icon "phone"%> <%= b.phone %></p>
