@@ -1,18 +1,21 @@
 
 <div class="col-md-8 beerinfo clearfix">
-<div class="col-md-12 beerhead">
-<%=fa_icon "beer"%>
-<h4><%= beer.name %></h4>
+  <div class="col-md-12 beerhead">
+  <%=fa_icon "beer"%>
+  <h4><%= beer.name %></h4>
+  </div>
+
+  <div class="description">
+  <p><%= beer.description %></p>
+  </div>
+
+  <div class="beertypes col-md-12">
+  <p>Style: <%= beer.style %></p>
+  <p>IBU: <%= beer.ibu %></p>
+  <p>ABV: <%= beer.abv %></p>
+  </div>
 </div>
-<div class="description">
-<p><%= beer.description %></p>
-<div>
-<div class="beertypes col-md-12">
-<p>Style: <%= beer.style %></p>
-<p>IBU: <%= beer.ibu %></p>
-<p>ABV: <%= beer.abv %></p>
-</div>
-</div>
+
 
 <div class="showreview">
 <h4>Reviews</h4>
