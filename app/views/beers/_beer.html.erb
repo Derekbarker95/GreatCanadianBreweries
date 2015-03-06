@@ -1,5 +1,5 @@
 
-<div class="col-md-8 beerinfo">
+<div class="col-md-10 beerinfo">
   <div class="col-md-12 beerhead">
   <%=fa_icon "beer"%>
   <h4><%= beer.name %></h4>
@@ -14,7 +14,7 @@
   <p>IBU: <%= beer.ibu %></p>
   <p>ABV: <%= beer.abv %></p>
   </div>
-</div>
+
 
 
 <div class="showreview">
@@ -27,4 +27,5 @@
 <div class="col-md-12 reviewform">
  <%= render partial: "/reviews/form", locals: {beer: beer, review: @review} %>
 </div>
-  
+
+</div>  
